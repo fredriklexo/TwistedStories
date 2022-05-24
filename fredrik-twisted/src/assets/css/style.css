@@ -1,0 +1,176 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+audio{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* ------------- LADNING CSS---------------- */
+.the-super-student-text{
+ width: 500px;
+  
+} 
+
+.intro-play-button { 
+  cursor:pointer;
+  transition: all .3s ease-in-out; 
+}
+.intro-play-button:hover { transform: scale(1.2); }
+
+
+.container{
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.row{
+  padding-top: 80px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-path {
+ 
+}
+.answer-container{
+  display: flex !important;
+}
+.answer-row {
+  display: flex !important;
+}
+
+.answer-card{
+  margin: 10px
+}
+
+.answer-text {
+  cursor: pointer;
+}
+
+
+.awnser_input_container {
+
+}
+
+.input-img{
+  margin-top: 20px;
+}
+
+.img-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 35%;
+}
+
+
+
+.intro-left {
+  position: absolute;
+  width: 50%;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  height: 100%;
+}
+
+.intro-right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 4;
+}
+
+
+.hugo-bottom {
+  position: absolute;
+  top: 100%;
+  left: 42%;
+}
+
+.hugo-left {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: rotate(90deg);
+}
+.hugo-right {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: rotate(-0.25turn);
+}
+
+.korv-img{
+  width: 400px;
+  position: absolute;
+  z-index: 4;
+  left: 39%;
+  top: 60%
+}
+.brod-img{
+  width: 400px;
+  position: absolute;
+  left: 38%;
+  top: 50%
+}
+
+
+.hugo-dance-img{
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 38%;
+}
+
+.martin-img{
+  width: 400px;
+  position: absolute;
+  top: 40%;
+  left: 38%;
+}
+
+.fredrik-face-img{
+  position: absolute;
+  width: 80px;
+  top: 40%;
+  left: 40%;
+  transform: rotate(-0.25turn);
+  z-index: 1;
+}
+
+.kossa-img{
+  z-index: 4;
+  position: relative;
+}
+/* ------------- QUESTION CSS---------------- */
+
+
+@media only screen and (max-width: 600px) {
+
+  .answer-row{
+    width: 100%;
+  }
+  .the-super-student-text{
+    width: 80%;
+  }
+}
