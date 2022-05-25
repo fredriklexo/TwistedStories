@@ -116,7 +116,7 @@ export function questionTimer(elem: HTMLDivElement) {
 
         if (timeLeft == 0) {
             clearTimeout(timerId);
-            doSomething();
+            pathEnding()
         } else {
             elem.innerHTML = timeLeft + ' seconds remaining';
             timeLeft--;
@@ -130,13 +130,7 @@ export function questionTimer(elem: HTMLDivElement) {
 
 }
 
-function doSomething() {
-    let nextStep = getGameStep(12!)
-    setCurrentStep(nextStep)
-    gamePage()
 
-
-}
 /* -----------------------------SOUND --------------------------------------------- */
 
 var btnSound = new Audio();
