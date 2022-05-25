@@ -6,11 +6,13 @@
   color: white;
   height: 100vh;
   width: 100vw;
+  
 }
 
 body {
   margin: 0;
   background-color: black;
+  overflow: hidden;
 }
 
 audio{
@@ -80,7 +82,9 @@ audio{
   left: 35%;
 }
 
-
+.super-fredrik{
+  width: 250px;
+}
 
 .intro-left {
   position: absolute;
@@ -100,38 +104,63 @@ audio{
   z-index: 4;
 }
 
+.fredrikmon-gif{
+  margin-top: 20px;
+  width: 900px;
+}
+
+.virre-gif{
+  width: 500px;
+}
+
+.david-gif{
+  width: 500px;
+}
 
 .hugo-bottom {
   position: absolute;
+  width: 400px;
+  
   top: 100%;
   left: 42%;
 }
 
 .hugo-left {
   position: absolute;
+  width: 600px;
   right: 100%;
-  top: 50%;
+  top: 20%;
   transform: rotate(90deg);
 }
+
+.hugo-middel {
+  position: absolute;
+  width: 300px;
+  right: 100%;
+  top: 0%;
+
+}
+
 .hugo-right {
   position: absolute;
   left: 100%;
-  top: 50%;
+  top: 20%;
   transform: rotate(-0.25turn);
 }
 
+
 .korv-img{
-  width: 400px;
+  width: 600px;
   position: absolute;
   z-index: 4;
-  left: 39%;
-  top: 60%
+  left: 32%;
+  top: 55%
 }
 .brod-img{
-  width: 400px;
+  width: 600px;
   position: absolute;
-  left: 38%;
-  top: 50%
+  left: 30%;
+  top: 40%
 }
 
 
@@ -161,6 +190,45 @@ audio{
 .kossa-img{
   z-index: 4;
   position: relative;
+}
+
+.iprenjulle-gif{
+  width: 600px;
+}
+.viktor-img{
+  width: 400px;
+}
+
+.donald-gif{
+  width: 400px;
+}
+
+.balloon1 {
+  position: absolute;
+  width: 400px;
+  
+  top: 100%;
+  left: 42%;
+}
+.balloon2 {
+  position: absolute;
+  width: 200px;
+  
+  top: 100%;
+  left: 32%;
+  
+}
+.balloon3 {
+  position: absolute;
+  width: 150px;
+  
+  top: 100%;
+  left: 62%;
+  
+}
+
+.win-png{
+  width: 700px;
 }
 /* ------------- QUESTION CSS---------------- */
 

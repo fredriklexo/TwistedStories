@@ -1,7 +1,8 @@
 import '../src/assets/css/style.css'
 import { startPage } from './functions/renderFunctions'
-import { gameList, GamePath } from './interface'
+import { GamePath } from './interface'
 import gsap from 'gsap'
+import { gameList } from './gamepath'
 
 export const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -16,9 +17,9 @@ export const setCurrentStep: (nextPath: GamePath) => void = (nextPath) => {
 function initSite() {
   startPage()
   
-  gsap.to(".intro-left", { duration: 10, ease: "none", x: -1000 , delay: 4});
-  gsap.to(".intro-right", { duration: 10, ease: "none", x: +1000, delay: 4 });
-  gsap.from(".super-fredrik", { duration: 5, ease: "none", x: -1000, delay: 4 });
+  gsap.to(".intro-left", { duration: 10, ease: "none", x: -1000 ,y: 0, delay: 4});
+  gsap.to(".intro-right", { duration: 10, ease: "none", x: +1000,y: 0, delay: 4 });
+  gsap.from(".super-fredrik", { duration: 5, ease: "none", x: -1000,y: 0, delay: 4 });
 
 }
 

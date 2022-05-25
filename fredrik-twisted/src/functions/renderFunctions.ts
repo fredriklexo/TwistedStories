@@ -1,10 +1,9 @@
 // Start landing page
 import { app } from "../main";
-import { getGameStep, getImageById } from "./functions";
-import { currentStep, setCurrentStep } from "../main";
-import { questionTimer } from "./functions";
-import { buttonSound } from "./functions";
-import gsap from "gsap";
+import { animation, getImageById, pathContinue, pathEnding, questionTimer, buttonSound } from "./functions";
+import { currentStep} from "../main";
+
+
 
 
 
@@ -19,11 +18,11 @@ export function startPage() {
 
     app.append(container);
     container.append(row,);
-    row.append(getImageById(15),getImageById(16),getImageById(1), getImageById(2), getImageById(3));
+    row.append(getImageById(15), getImageById(16), getImageById(1), getImageById(2), getImageById(3));
     //start the game
     document.getElementsByClassName("intro-play-button")[0].addEventListener("click", function () {
         gamePage()
-        
+
     })
 
 }
@@ -41,23 +40,26 @@ export function gamePage() {
     let row = document.createElement("div");
     row.classList.add("row")
 
-    if(currentStep.introAudio){
+    if (currentStep.introAudio) {
         buttonSound(currentStep.introAudio)
 
     }
 
-    if(currentStep.id != 12){
-        let timer = document.createElement("div");
-        timer.id = "Timer";
-        questionTimer(timer);
-        row.append(timer)
+    if (currentStep.id != 12 ) {
+        if(currentStep.id != 11 ){
+
+            let timer = document.createElement("div");
+            timer.id = "Timer";
+            questionTimer(timer);
+            row.append(timer)
+        }
     }
 
     app.append(container);
     container.append(row,);
     question(row)
     answerPath(row)
-    
+
 }
 
 function question(row: HTMLDivElement) {
@@ -76,20 +78,11 @@ function question(row: HTMLDivElement) {
     question_container.append(question_row)
     question_row.append(question_text)
 
-    if(currentStep.animation){
+    if (currentStep.animation) {
         currentStep.animation.forEach(img => {
-            
+
             question_row.append(getImageById(img.id, img.audio))
-            gsap.to(".hugo-bottom", { duration: 5, ease: "none", y: -200, delay: 4 , yoyo:true, repeat:10});
-            
-            gsap.to(".hugo-left", { duration: 5, ease: "none", x: 200, delay: 8 , yoyo:true, repeat:10});
-            gsap.to(".hugo-right", {duration: 5, ease: "none", x: -200, delay: 10 , yoyo:true, repeat:10});
-            gsap.to(".hugo-middel", { duration: 2.5, ease: "bounce.in", y: 0, scaleX: 1});
-
-            gsap.fromTo(".korv-img", { duration: 20, ease: "none", x: -1100, delay: 2 },{duration: 20, ease: "none", x: 0, delay: 2});
-            gsap.to(".hugo-dance-img",{rotateY:180,repeat: -1, repeatDelay: 2, yoyo: true})
-            gsap.fromTo(".martin-img", { duration: 20, ease: "none", x: -1100, delay: 2 },{duration: 20, ease: "none", x: 0, delay: 2});
-
+            animation()
         });
     }
 
@@ -108,7 +101,7 @@ function answerPath(row: HTMLDivElement) {
 
     currentStep.answer.forEach(list => {
         if (list.input === true) {
-            const awnser_input_container = document.createElement("div"); 
+            const awnser_input_container = document.createElement("div");
             awnser_input_container.classList.add("awnser-input-container")
 
             const form = document.createElement("form")
@@ -132,7 +125,7 @@ function answerPath(row: HTMLDivElement) {
             }
             form.addEventListener("submit", function (event) {
                 event.preventDefault()
-                
+
                 if (answer_input.value.toLowerCase() == list.answer.toLowerCase()) {
                     pathContinue(list.nextpath)
                 } else {
@@ -161,10 +154,10 @@ function answerPath(row: HTMLDivElement) {
             answer_text.addEventListener("click", function () {
                 if (list.nextpath != 12) {
                     pathContinue(list.nextpath)
-                }else{
+                } else {
                     pathEnding()
                 }
-  
+
             })
 
         }
@@ -172,16 +165,5 @@ function answerPath(row: HTMLDivElement) {
     });
 }
 
-function pathEnding(){
-    let nextStep = getGameStep(12)
-    setCurrentStep(nextStep)
-    buttonSound("../src/assets/sound/fuckedup.mp3")
-    setTimeout(function() { gamePage(); }, 3000);
-}
 
-function pathContinue(nextpath:number){
-    let nextStep = getGameStep(nextpath!)
-    setCurrentStep(nextStep)
-    gamePage()
-}
 
