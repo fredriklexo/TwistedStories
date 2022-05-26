@@ -102,33 +102,6 @@ export function pathContinue(nextpath: number) {
 }
 
 
-/* -----------------------------TIMER --------------------------------------------- */
-
-
-
-export function questionTimer(elem: HTMLDivElement) {
-    // questionSound()
-    resertTimer()
-    var timerId = setInterval(countdown, 1000);
-    var timeLeft = 500;
-
-    function countdown() {
-
-        if (timeLeft == 0) {
-            clearTimeout(timerId);
-            pathEnding()
-        } else {
-            elem.innerHTML = timeLeft + ' seconds remaining';
-            timeLeft--;
-        }
-    }
-    function resertTimer() {
-        timeLeft = 0
-        clearInterval(timerId);
-    }
-
-
-}
 
 
 /* -----------------------------SOUND --------------------------------------------- */

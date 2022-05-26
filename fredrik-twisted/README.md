@@ -1,6 +1,6 @@
 # THE SUPER STUDENT
 Är du nästa super student? Då är det här spelet för dig!
-Spelet är baserat på frågor där du snabbt måste svara och lösa utmaningen innan tiden går ut.
+Spelet är baserat på frågor där du måste svara och lösa utmaningen för att gå vidare
 
 ## Uppbyggnad
 projektet byggs på vanilla ts.

@@ -1,6 +1,6 @@
 // Start landing page
 import { app } from "../main";
-import { animation, getImageById, pathContinue, pathEnding, questionTimer, buttonSound } from "./functions";
+import { animation, getImageById, pathContinue, pathEnding, buttonSound } from "./functions";
 import { currentStep} from "../main";
 
 
@@ -45,15 +45,6 @@ export function gamePage() {
 
     }
 
-    if (currentStep.id != 12 ) {
-        if(currentStep.id != 11 ){
-
-            let timer = document.createElement("div");
-            timer.id = "Timer";
-            questionTimer(timer);
-            row.append(timer)
-        }
-    }
 
     app.append(container);
     container.append(row,);
